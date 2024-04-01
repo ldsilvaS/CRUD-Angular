@@ -10,27 +10,48 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class CadastroComponent implements OnInit {
 
-    public meuFormulario: FormGroup | any
+    public meuFormulario!: FormGroup | any
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService){}
 
-  
+
 
   ngOnInit(): void {
     this.meuFormulario = this.formBuilder.group({
-      nome: ["", Validators.required],
-      telefone: ["", Validators.required],
-      email: ["", Validators.required],
+      nome: ["", [Validators.required, Validators.minLength(3)]],
+      telefone: ["", [Validators.required, Validators.minLength(11)]],
+      email: ["", [Validators.required, Validators.email]],
       endereco: ["", Validators.required]
     })
   }
 
+  get nome() {
+    return this.meuFormulario.get('nome')!;
+  }
+
+  get telefone () {
+    return this.meuFormulario.get('telefone')!;
+  }
+
+  get email() {
+    return this.meuFormulario.get('email');
+  }
+
+  get endereco() {
+    return this.meuFormulario.get('endereco')
+  }
+
+
   postCliente() {
     let formCliente = this.meuFormulario.getRawValue();     // Colocando dentro da variavel o valor do meu formulário.
-
-    this.apiService.postCliente(formCliente).subscribe((response:any) => {
-      console.log(response);
-    })
+    if(this.meuFormulario.invalid){
+      return;
+    }else{
+      this.apiService.postCliente(formCliente).subscribe((response:any) => {
+        console.log(response);
+        this.meuFormulario.reset();
+      })
+    }
   }
 
 }

@@ -6,11 +6,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  constructor(private httpCliente: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   postCliente(form: any) {
 
-    return this.httpCliente.post<any[]>('https://www.webuprs.com.br/lucasteste/postCliente.php', form)
+    return this.httpClient.post<any[]>('https://www.webuprs.com.br/lucasteste/postCliente.php', form)
 
   }
+
+
+  /*getAll() {
+    return this.httpClient.get<any[]>('https://www.webuprs.com.br/lucasteste/getCliente.php');
+  }*/
 }

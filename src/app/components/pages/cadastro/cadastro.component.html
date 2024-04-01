@@ -1,11 +1,33 @@
 <div class="cadastro-container">
     <h1>Cadastro de clientes</h1>
-    <form [formGroup]="meuFormulario" (ngSubmit)="postCliente()">
-        <input type="text" placeholder="Nome" formControlName="nome">
-        <input type="text" placeholder="Telefone" formControlName="telefone">
-        <input type="text" placeholder="Email" formControlName="email">
-        <input type="text" placeholder="Endereço" formControlName="endereco">
-
-        <button type="submit">Cadastrar</button>
+    <form [formGroup]="meuFormulario" #formDir="ngForm" >
+        <div class="inputs">
+          <input type="text" placeholder="Nome" formControlName="nome">
+          <div class="error" *ngIf="nome.invalid && formDir.submitted">
+            <p *ngIf="nome.errors?.['required']">Preencha o nome.</p>
+            <p *ngIf="nome.errors?.['minlength']">No minimo 3 letras.</p>
+          </div>
+        </div>
+        <div class="inputs">
+          <input type="text" placeholder="Telefone" formControlName="telefone">
+          <div class="error" *ngIf="telefone.invalid && formDir.submitted">
+            <p *ngIf="telefone.errors?.['required']">Preencha o numero.</p>
+            <p *ngIf="telefone.errors?.['minlength']">Informe o numero completo. exp: 51980173085</p>
+          </div>
+        </div>
+        <div class="inputs">
+          <input type="text" placeholder="Email" formControlName="email">
+          <div class="error" *ngIf="email.invalid && formDir.submitted">
+            <p *ngIf="email.errors?.['required']">Preencha o numero.</p>
+            <p *ngIf="email.errors?.['email']">Informe um email válido.</p>
+          </div>
+        </div>
+        <div class="inputs">
+          <input type="text" placeholder="Endereço" formControlName="endereco">
+          <div class="error" *ngIf="endereco.invalid && formDir.submitted">
+            <p *ngIf="endereco.errors?.['required']">Preencha o numero.</p>
+          </div>
+        </div>
+        <button (click)="postCliente()">Cadastrar</button>
     </form>
 </div>
