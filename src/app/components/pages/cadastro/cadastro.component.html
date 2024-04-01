@@ -1,0 +1,11 @@
+<div class="cadastro-container">
+    <h1>Cadastro de clientes</h1>
+    <form [formGroup]="meuFormulario" (ngSubmit)="postCliente()">
+        <input type="text" placeholder="Nome" formControlName="nome">
+        <input type="text" placeholder="Telefone" formControlName="telefone">
+        <input type="text" placeholder="Email" formControlName="email">
+        <input type="text" placeholder="Endereço" formControlName="endereco">
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>

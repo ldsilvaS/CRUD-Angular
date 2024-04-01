@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    width: 50vw;
+    height: 80px;
+    padding: 0px 100px;
+    align-items: center;
+    justify-content: space-between;
+    background: #a3a3a3;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 2px 2px 30px #ffffff43;
+}
+
+
+nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+}
