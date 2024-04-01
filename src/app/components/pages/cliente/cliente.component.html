@@ -1,3 +1,26 @@
 <div class="cliente-container">
-    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Cliente</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Endereço</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes ">
+                <td>{{cliente.id}}</td>
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.telefone}}</td>
+                <td>{{cliente.email}}</td>
+                <td>{{cliente.endereco}}</td>
+                <td class="botoes">
+                    <button>Editar</button>
+                    <button>Deletar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

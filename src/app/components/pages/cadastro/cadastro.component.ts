@@ -10,14 +10,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 export class CadastroComponent implements OnInit {
 
-    public meuFormulario!: FormGroup | any
+    public meuFormulario!: FormGroup | any;
+    proximoId: number = 1;
 
   constructor(private formBuilder: FormBuilder, private apiService: ApiService){}
 
 
 
   ngOnInit(): void {
+    
     this.meuFormulario = this.formBuilder.group({
+      id: [this.proximoId],
       nome: ["", [Validators.required, Validators.minLength(3)]],
       telefone: ["", [Validators.required, Validators.minLength(11)]],
       email: ["", [Validators.required, Validators.email]],
@@ -50,6 +53,9 @@ export class CadastroComponent implements OnInit {
       this.apiService.postCliente(formCliente).subscribe((response:any) => {
         console.log(response);
         this.meuFormulario.reset();
+        this.proximoId++;
+        console.log(this.proximoId)
+        this.meuFormulario.patchValue({id:this.proximoId})
       })
     }
   }

@@ -13,14 +13,14 @@ export class ClienteComponent implements OnInit {
   clientes : any;
 
   ngOnInit(): void {
-    //this.getAll();
+    this.getAll();
   }
 
 
-  /*getAll() {
+  getAll() {
     this.apiService.getAll().subscribe((response: any) => {
+      console.log(response)
       this.clientes = response;
     })
   }
-  */
 }

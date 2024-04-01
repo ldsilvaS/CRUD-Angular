@@ -1,0 +1,32 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "nome": "LUCAS DA SILVA",
+      "telefone": "51984561493",
+      "email": "lucas@teste.com",
+      "endereco": "Estrada do Barro Vermelho, 238"
+    },
+    {
+      "id": "2",
+      "nome": "Julia",
+      "telefone": "51985858585",
+      "email": "julia@teste.com",
+      "endereco": "Rua Julia"
+    },
+    {
+      "id": "3",
+      "nome": "Matheus",
+      "telefone": "51889585858",
+      "email": "matheus2@teste.com",
+      "endereco": "Rua Matheus"
+    },
+    {
+      "id": 4,
+      "nome": "Avelino",
+      "telefone": "51985854525",
+      "email": "avelino@yahoo.com",
+      "endereco": "Rua Avelino"
+    }
+  ]
+}
