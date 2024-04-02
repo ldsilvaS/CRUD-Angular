@@ -1,38 +1,7 @@
 .cliente-container {
-    width: 50vw;
+    width: 60vw;
     height: 600px;
     margin-top: 20px;
     background: #d9d9d9;
     border-radius: 5px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-th {
-    background: #f2f2f2;
-    color: #323232;
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #323232;
-}
-
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-tbody tr:nth-child(even) {
-    background: #f9f9f9;
-}
-
-.botoes {
-    width: 15%;
-    padding: 0 14px;
-}
-
-.botoes button {
-    margin-right: 10px;
 }

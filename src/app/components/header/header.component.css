@@ -1,8 +1,8 @@
 .header {
     display: flex;
-    width: 50vw;
+    width: 60vw;
     height: 80px;
-    padding: 0px 100px;
+    padding: 0px 70px;
     align-items: center;
     justify-content: space-between;
     background: #a3a3a3;
@@ -11,14 +11,18 @@
     box-shadow: 2px 2px 30px #ffffff43;
 }
 
+.header h1 {
+    font-size: 2.3em;
+    font-weight: 800;
+}
 
 nav a {
-    margin-right: 20px;
+    margin-left: 40px;
     text-decoration: none;
     font-size: 1.3em;
-    font-weight: 400;
+    font-weight: 600;
     transition: 0.5s;
-    color: #0ff19b;
+    color: #fff;
 }
 
 

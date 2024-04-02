@@ -14,7 +14,7 @@ export class ApiService {
 
   postCliente(form: any) {
 
-    return this.http.post<any[]>(this.apiUrl, form)
+    return this.http.post<any[]>(`https://www.webuprs.com.br/lucasteste/postCliente.php`, form)
 
   }
 
@@ -22,6 +22,6 @@ export class ApiService {
 
 
   getAll() {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<any[]>(`https://www.webuprs.com.br/lucasteste/getCliente.php`);
   }
 }

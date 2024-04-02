@@ -1,12 +1,13 @@
 <div class="cliente-container">
-    <table border="1">
+    <table class="table">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Cliente</th>
-                <th>Telefone</th>
-                <th>Email</th>
-                <th>Endereço</th>
+                <th scope="col">#</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Endereço</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -17,8 +18,9 @@
                 <td>{{cliente.email}}</td>
                 <td>{{cliente.endereco}}</td>
                 <td class="botoes">
-                    <button>Editar</button>
-                    <button>Deletar</button>
+                    <button type="button" class="btn btn-outline-warning">Editar</button>
+                    {{' '}}                                                                      <!-- Espaço entre os botões-->
+                    <button type="button" class="btn btn-danger">Deletar</button>
                 </td>
             </tr>
         </tbody>
