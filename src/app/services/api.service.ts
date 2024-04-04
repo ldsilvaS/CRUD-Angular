@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  private apiUrl = 'http://localhost:3000/clientes';
+  //private apiUrl = 'http://localhost:3000/clientes';
 
 
   postCliente(form: any) {
@@ -18,8 +18,9 @@ export class ApiService {
 
   }
 
-  
-
+  getClienteById(id: any) {
+    return this.http.get(`https://www.webuprs.com.br/lucasteste/getClienteById.php/${id}`)
+  }
 
   getAll() {
     return this.http.get<any[]>(`https://www.webuprs.com.br/lucasteste/getCliente.php`);
