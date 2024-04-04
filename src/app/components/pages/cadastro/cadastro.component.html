@@ -28,6 +28,7 @@
             <p *ngIf="endereco.errors?.['required']">Preencha o numero.</p>
           </div>
         </div>
-        <button (click)="postCliente()">Cadastrar</button>
+        <button (click)="postCliente()" *ngIf="this.id === null">Cadastrar</button>
+        <button (click)="putCliente()" *ngIf="this.id !== null">Editar</button>
     </form>
 </div>

@@ -26,8 +26,4 @@ export class ClienteComponent implements OnInit {
       this.clientes = response;
     });
   }
-
-  putCliente(id: any) {
-    this.router.navigate(['editar-cliente', id], { relativeTo: this.route }); // Navego até a rota especifica do id.
-  }
 }

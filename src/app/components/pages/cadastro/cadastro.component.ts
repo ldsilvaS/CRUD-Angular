@@ -13,7 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 export class CadastroComponent implements OnInit {
 
     public meuFormulario!: FormGroup | any;
-    proximoId: number = 1;
+    id: any
+    cliente: any;
 
   constructor(
       private formBuilder: FormBuilder,
@@ -34,24 +35,37 @@ export class CadastroComponent implements OnInit {
       endereco: ["", Validators.required]
     })
 
-    this.route.params.subscribe((params: any) => {
-      const id = params['id'];
-      const cliente = this.apiService.getClienteById(id).subscribe(cliente => {
-        this.atualizaForm(cliente)
-      })
-    })
+    this.id = this.route.snapshot.paramMap.get('id');
+    if(this.id !== null){
+      this.getCliente(this.id)
+    }
 
 
   }
 
-  atualizaForm(cliente : any) {
-    this.meuFormulario.patchValue({
-      id: cliente.id,
-      nome: cliente.nome,
-      telefone: cliente.telefone,
-      email: cliente.email,
-      endereco: cliente.endereco
-    })
+  putCliente() {
+   
+      let formCliente = this.meuFormulario.getRawValue();     // Colocando dentro da variavel o valor do meu formulário.
+      formCliente.id = this.id;
+      if(this.meuFormulario.invalid){
+        return;
+      }else{
+        this.apiService.putCliente(formCliente).subscribe((response:any) => {
+          console.log(response);
+          this.meuFormulario.reset();
+          this.location.back();
+        })
+      }
+  }
+
+  getCliente(id: any) {
+    this.apiService.getClienteById(id).subscribe((response: any) => {
+      this.cliente = response;
+      this.meuFormulario.controls['nome'].setValue(this.cliente.nome)
+      this.meuFormulario.controls['telefone'].setValue(this.cliente.telefone)
+      this.meuFormulario.controls['email'].setValue(this.cliente.email)
+      this.meuFormulario.controls['endereco'].setValue(this.cliente.endereco)
+    });
   }
 
   get nome() {

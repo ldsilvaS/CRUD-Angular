@@ -18,7 +18,7 @@
                 <td>{{cliente.email}}</td>
                 <td>{{cliente.endereco}}</td>
                 <td class="botoes">
-                    <button type="button" class="btn btn-outline-warning" (click)="putCliente(cliente.id)">Editar</button>
+                    <button type="button" class="btn btn-outline-warning" routerLink="{{cliente.id}}">Editar</button>
                     {{' '}}                                                                      <!-- Espaço entre os botões-->
                     <button type="button" class="btn btn-danger">Deletar</button>
                 </td>
