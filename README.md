@@ -13,3 +13,11 @@ deleteCliente(cliente: any) {
   }
 
 ```
+
+```typescript
+
+deleteCliente(id: any){
+  return this.http.delete<any[]>(`https://www.webuprs.com.br/php/deleteCliente.php?id=${id}`)
+}
+
+```
