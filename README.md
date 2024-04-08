@@ -2,7 +2,8 @@
 
 ## Modificações para Implementar:
 
-```javascript
+```typescript
+
 deleteCliente(cliente: any) {
     this.clienteSelecionado = cliente;
     this.apiService.deleteCliente(this.clienteSelecionado.id).subscribe(() => {
