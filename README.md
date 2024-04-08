@@ -1,5 +1,14 @@
 ## CRUD - Teste
 
-Configuração do db.json
+## Modificações para Implementar:
 
-## json-server --watch db.json
+```
+deleteCliente(cliente: any) {
+    this.clienteSelecionado = cliente;
+    this.apiService.deleteCliente(this.clienteSelecionado.id).subscribe(() => {
+      this.getAll();
+    });
+    console.log(cliente);
+  }
+
+```
