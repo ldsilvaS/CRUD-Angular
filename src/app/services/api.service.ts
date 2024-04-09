@@ -11,26 +11,24 @@ export class ApiService {
 
   private apiUrl = 'http://localhost:3000/clientes';
 
-
   postCliente(form: any) {
-
-    return this.http.post<any[]>(`https://www.webuprs.com.br/lucasteste/postCliente.php`, form)
-
+    return this.http.post<any[]>(`${this.apiUrl}`, form)
   }
 
   putCliente(form: any) {
-
-    return this.http.post<any[]>(`https://www.webuprs.com.br/lucasteste/putCliente.php`, form)
-
+    return this.http.put<any[]>(`${this.apiUrl}/${form.id}`, form)
   }
 
- 
+  deleteCliente(id: any) {
+    return this.http.delete(`${this.apiUrl}/${id}`)
+  }
 
   getClienteById(id: any) {
-    return this.http.get(`https://www.webuprs.com.br/lucasteste/getClienteById.php?id=${id}`)
+    return this.http.get(`${this.apiUrl}/${id}`)
   }
 
   getAll() {
-    return this.http.get<any[]>(`https://www.webuprs.com.br/lucasteste/getCliente.php`);
+    return this.http.get<any[]>(`${this.apiUrl}`);
   }
+
 }

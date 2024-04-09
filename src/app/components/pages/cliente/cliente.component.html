@@ -1,28 +1,31 @@
 <div class="cliente-container">
+  <div class="table-responsive-md">
     <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Cliente</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Email</th>
-                <th scope="col">Endereço</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let cliente of clientes ">
-                <td>{{cliente.id}}</td>
-                <td>{{cliente.nome}}</td>
-                <td>{{cliente.telefone}}</td>
-                <td>{{cliente.email}}</td>
-                <td>{{cliente.endereco}}</td>
-                <td class="botoes">
-                    <button type="button" class="btn btn-outline-warning" routerLink="{{cliente.id}}">Editar</button>
-                    {{' '}}                                                                      <!-- Espaço entre os botões-->
-                    <button type="button" class="btn btn-danger">Deletar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+      <thead class="table-light">
+          <tr>
+              <th scope="col">#</th>
+              <th scope="col">Cliente</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">Email</th>
+              <th scope="col">Endereço</th>
+              <th scope="col"></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let cliente of clientes ">
+              <td>{{cliente.id}}</td>
+              <td>{{cliente.nome}}</td>
+              <td>{{cliente.telefone}}</td>
+              <td>{{cliente.email}}</td>
+              <td>{{cliente.endereco}}</td>
+              <td class="botoes">
+                  <button type="button" class="btn btn-outline-warning" routerLink="{{cliente.id}}">Editar</button>
+                  {{' '}}                                                                      <!-- Espaço entre os botões-->
+                  <button type="button" class="btn btn-danger" (click)="deleteCliente(cliente.id)">Deletar</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  </div>
+
 </div>

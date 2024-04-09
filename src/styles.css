@@ -12,7 +12,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-main {
+body {
     display: flex;
     position: absolute;
     width: 100vw;

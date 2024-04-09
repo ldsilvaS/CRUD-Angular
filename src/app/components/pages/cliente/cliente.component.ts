@@ -15,14 +15,22 @@ export class ClienteComponent implements OnInit {
   ) {} // Para utilizar o put, preciso importar Router e ActivatedRoute
 
   clientes: any;
+  clienteSelecionado: any;
 
   ngOnInit(): void {
     this.getAll();
   }
 
-  getAll() {
+  deleteCliente(id: any) {   // Função de DELETE. Recebe o ID para identificar qual cliente sera deletado.
+    this.clienteSelecionado = id
+    this.apiService.deleteCliente(this.clienteSelecionado).subscribe(() => {
+      this.getAll(); // Chama a função getAll() para atualizar a lista.
+    });
+    console.log(id);
+  }
+
+  getAll() {  // Função que lista os clientes
     this.apiService.getAll().subscribe((response: any) => {
-      console.log(response);
       this.clientes = response;
     });
   }
