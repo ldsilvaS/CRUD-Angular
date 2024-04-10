@@ -39,7 +39,7 @@ export class ClienteComponent implements OnInit {
     });
   }
 
-  search(e: Event): void {
+  searchCliente(e: Event): void {
     const target = e.target as HTMLInputElement
     const value = target.value
 
