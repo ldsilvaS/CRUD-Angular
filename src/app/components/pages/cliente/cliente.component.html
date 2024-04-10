@@ -1,3 +1,10 @@
+<div class="search-container">
+  <form>
+    <input type="text" placeholder="Search" (input)="search($event)">
+  </form>
+
+</div>
+
 <div class="cliente-container">
   <div class="table-responsive-md">
     <table class="table">
@@ -12,7 +19,7 @@
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor="let cliente of clientes ">
+          <tr *ngFor="let cliente of allClientes">
               <td>{{cliente.id}}</td>
               <td>{{cliente.nome}}</td>
               <td>{{cliente.telefone}}</td>

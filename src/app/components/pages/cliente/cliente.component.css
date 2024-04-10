@@ -1,7 +1,28 @@
 .cliente-container {
     width: 60vw;
     height: 600px;
-    margin-top: 75px;
+    margin-top: 50px;
     background: #fff;
     border-radius: 5px;
+}
+
+.search-container {
+  display: flex;
+  margin-top: 50px ;
+  width: 500px;
+  height: 50px;
+  background: transparent;
+}
+
+.search-container form {
+  width: 100%;
+}
+
+.search-container form input {
+  width: 100%;
+  height: 50px;
+  padding: 0px 15px;
+  border-radius: 2px;
+  border: none;
+  outline: none;
 }

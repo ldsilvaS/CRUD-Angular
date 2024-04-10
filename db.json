@@ -1,3 +1,32 @@
 {
-  "clientes": []
+  "clientes": [
+    {
+      "id": "3",
+      "nome": "Matheus Silva",
+      "telefone": "51980172458",
+      "email": "matheus@teste.com",
+      "endereco": "Estrada M"
+    },
+    {
+      "id": "4",
+      "nome": "Julia",
+      "telefone": "51985254525",
+      "email": "julia@teste.com",
+      "endereco": "Estrada B"
+    },
+    {
+      "id": "5",
+      "nome": "Lucas Silva",
+      "telefone": "51980254585",
+      "email": "lucas@teste.com",
+      "endereco": "Estrada C"
+    },
+    {
+      "id": "6",
+      "nome": "Lucas Santos",
+      "telefone": "51996545475",
+      "email": "lucassantos@teste.com",
+      "endereco": "Estrada H"
+    }
+  ]
 }

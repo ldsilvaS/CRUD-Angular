@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ApiService } from '../../../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -11,10 +11,12 @@ export class ClienteComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private ref: ChangeDetectorRef
   ) {} // Para utilizar o put, preciso importar Router e ActivatedRoute
 
-  clientes: any;
+  allClientes: any;
+  clientes: any = null;
   clienteSelecionado: any;
 
   ngOnInit(): void {
@@ -31,7 +33,30 @@ export class ClienteComponent implements OnInit {
 
   getAll() {  // Função que lista os clientes
     this.apiService.getAll().subscribe((response: any) => {
-      this.clientes = response;
+
+      this.allClientes = response;
+
     });
   }
+
+  search(e: Event): void {
+    const target = e.target as HTMLInputElement
+    const value = target.value
+
+    if(value !== '') {
+      this.allClientes = this.allClientes.filter((cliente:any) => {
+        return cliente.nome.includes(value)
+      })
+    }else{
+      this.getAll();
+    }
+
+
+
+
+    console.log(this.clientes);
+
+    //this.ref.detectChanges();
+  }
+
 }
